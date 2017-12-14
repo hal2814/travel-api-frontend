@@ -12,7 +12,9 @@ import { Destination } from './destination.model'
 export class AppComponent implements OnInit {
   private apiUrl = 'http://localhost:3000/destinations';
   data: Destination[];
-  title = 'app works!';
+  title = 'Destinations';
+  city;
+  description;
 
 
   constructor(private http: Http) {
@@ -28,6 +30,8 @@ export class AppComponent implements OnInit {
   getDestinations() {
     this.getData().subscribe(data => {
       console.log(data);
+      data.forEach(function(destination) {
+      });
       this.data = data
     })
   }
